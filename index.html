@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simplilearn</title>
+    <link rel="stylesheet" href="output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script>
+        function showAnswer(index) {
+          document.querySelectorAll('.answer').forEach((el, i) => {
+            el.classList.add('hidden');
+            if (i === index) el.classList.remove('hidden');
+          });
+    
+          document.querySelectorAll('.question').forEach((q, i) => {
+            q.classList.remove('border-l-4', 'border-blue-500', 'bg-blue-100');
+            q.setAttribute('aria-expanded', 'false');
+            if (i === index) {
+              q.classList.add('border-l-4', 'border-blue-500', 'bg-blue-100');
+              q.setAttribute('aria-expanded', 'true');
+            }
+          });
+        }
+      </script>
+</head>
+<body>
+    <!--Header-->
+    <header class="bg-white shadow-sm">
+         <nav class="container mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center">
+             <div class="flex items-center mb-4 md:mb-0">
+                 <img src="new_logo.svgz" alt="Logo" class="h-15">
+             </div>
+         <div class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6" > 
+            <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white text-xl cursor-pointer rounded mt-4 px-4 py-2">ALL Courses</a>
+            <input type="text"  placeholder="What do you want to learn?" class="border rounded-lg p-2 w-full md:w-64">
+
+            <!-- Hamburger Icon (Visible on Mobile) -->
+            <button id="menu-toggle" class="md:hidden focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+
+            <!-- Navigation Links -->
+            <div id="menu" class="hidden md:flex md:items-center md:space-x-4">
+                <a href="#" class="hover:text-blue-500 font-bold text-sm sm:text-2xl px-3 py-2 sm:text-left hover:bg-gray-700 rounded">For Business</a>
+                <a href="#" class="hover:text-blue-500 font-bold text-sm sm:text-2xl px-3 py-2 hover:bg-gray-700 rounded">Resources</a>
+                <a href="#" class="hover:text-blue-500 font-bold text-sm sm:text-2xl px-3 py-2 hover:bg-gray-700 rounded">More</a>
+            </div>
+            <script>
+                const menuToggle = document.getElementById('menu-toggle');
+                const menu = document.getElementById('menu');
+        
+                menuToggle.addEventListener('click', () => {
+                    menu.classList.toggle('hidden');
+                });
+            </script>
+            <button class="bg-blue-500 text-white text-lg px-4 py-2 rounded hover:bg-blue-600">Login</button>
+         </div>
+         </nav>
+     </header>
+
+    <!-- Hero Section -->
+    <section class="container mx-auto px-4 py-8 sm:px-6 sm:py-10 md:px-8 md:py-12 lg:px-10 lg:py-14">
+      <div class="flex flex-col md:flex-row gap-8">
+          <!-- Left Content -->
+          <div class="md:w-2/3 py-10">
+              <nav class="text-blue-500 font-semibold text-lg mb-4">
+                  Home > Data Science & Business Analytics > Data Analyst
+              </nav>
+              <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Data Analyst</h1>
+              <p class="italic font-semibold text-xl md:text-2xl text-gray-600 mb-4">Ranked #1 Data Analytics Course by Career Karma</p>
+              <ul class="text-xl lg:text-2xl md:text-1xl text-gray-700 space-y-2 mb-6">
+                  <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Earn a recognized Data Analyst Certification</li>
+                  <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Learn SQL, R, Python, data visualization, and predictive analytics</li>
+                  <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Hands-on experience with real-world projects</li>
+                  <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Earn IBM certificates and Masterclasses by IBM experts</li>
+              </ul>
+              <p class="text-lg font-semibold mb-4">In Collaboration With</p>
+              <img src="IBM_logo (1).svgz" alt="IBM Logo" class="h-12 mb-6">
+              <div class="flex flex-col sm:flex-row gap-4">
+                  <button class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700">Talk to Advisor</button>
+                  <button class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700">Download Syllabus</button>
+              </div>
+          </div>
+          <!-- Right Image -->
+          <div class="md:w-1/3 flex flex-col items-center">
+              <img src="Default.avif" alt="Data Analyst" class="w-90 h-90 md:w-120 md:h-140 sm:w-60 sm:h-60 rounded object-cover mb-4">
+              <div class="flex flex-col sm:flex-row gap-4">
+                  <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 flex items-center">
+                      <i class="fa-solid fa-user mr-2"></i> 39,790 Learners
+                  </button>
+                  <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 flex items-center">
+                      <i class="fa-solid fa-star text-yellow-400 mr-2"></i> 4.6 Ratings
+                  </button>
+              </div>
+          </div>
+      </div>
+  </section>
+
+<!-- Program Details -->
+<section class="bg-gradient-to-r from-red-500 to-yellow-500 py-6  sm:py-8 md:py-10 lg:py-12">
+  <div class="container mx-auto px-7 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex items-center text-lg">
+          <i class="fa-regular fa-clock mr-2"></i>
+          <p>Next cohort starts <br><span class="font-bold text-xl">19th Apr, 2025</span></p>
+      </div>
+      <div class="flex items-center text-lg">
+          <i class="fa-regular fa-calendar mr-2"></i>
+          <p>Program duration <br><span class="font-bold text-xl">11 months</span></p>
+      </div>
+      <div class="flex items-center text-lg">
+          <i class="fa-solid fa-book-open mr-2 text-gray-400"></i>
+          <p>Learning Format <br><span class="font-bold text-xl">Live, Online, Interactive</span></p>
+      </div>
+  </div>
+</section>
+
+
+<!--Why join this program-->
+    <div class="container mx-auto px-4 py-8 sm:px-6 sm:py-10 md:px-8 md:py-12 lg:px-10 lg:py-14">
+        <!-- Header -->
+        <h1 class="text-3xl md:text-4xl sm:text-4xl font-bold mb-8">Why Join this Program</h1>
+
+        <!-- Main Content -->
+        <div class="flex flex-col lg:flex-row gap-8 px-7">
+            <!-- Left  -->
+            <div class="lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                    <img src="AcademicExecandExecAlumniStatus.avif" alt="IBM Icon" class="mr-4">
+                    <div>
+                    <h3 class="text-xl font-semibold mb-2">IBM Advantage</h3>
+                    <p class="text-gray-600">Access hackathons, masterclasses, and AMA sessions. Earn IBM certificates for IBM courses.</p>
+                </div>
+            </div>
+                <!-- Card 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                    <img src="Hands-on Experience.avif" alt="Learning Icon" class="mr-4">
+                    <div>
+                    <h3 class="text-xl font-semibold mb-2">Applied Learning</h3>
+                    <p class="text-gray-600">Capstone and 20+ industry-relevant data analytics projects to ensure comprehensive learning.</p>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                    <img src="TrendsandIndustryInsights.avif" alt="Decision Making Icon" class="mr-4">
+                    <div>
+                    <h3 class="text-xl font-semibold mb-2">Data-Driven Decision Making</h3>
+                    <p class="text-gray-600">Learn tools like Tableau, Excel, SQL, Python, R, PowerBI and more.</p>
+                </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                    <img src="Docs - Pages - Learning.avif" alt="Course Icon" class="mr-4">
+                    <div>
+                    <h3 class="text-xl font-semibold mb-2">Top-notch Data Analyst course</h3>
+                    <p class="text-gray-600">Comprehensive data analytics curriculum with live online classes by industry experts.</p>
+                </div>
+                </div>
+            </div>
+
+            <!-- Right -->
+            <div class="lg:w-1/3 bg-white p-6 rounded-lg shadow-md">
+                <h3 class="text-xl font-semibold mb-4">Next cohort starts on 3rd May</h3>
+                <div class="flex justify-between mb-4">
+                    <div class="text-center">
+                        <p class="text-2xl font-bold">4</p>
+                        <p class="text-gray-600">Days</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-2xl font-bold">4</p>
+                        <p class="text-gray-600">Hours</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-2xl font-bold">09</p>
+                        <p class="text-gray-600">Minutes</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-2xl font-bold">42</p>
+                        <p class="text-gray-600">Seconds</p>
+                    </div>
+                </div>
+                <form>
+                    <div class="mb-4">
+                        <input type="text" placeholder="Name*" class="w-full p-2 border rounded-md" required>
+                    </div>
+                    <div class="mb-4">
+                        <input type="email" placeholder="Email*" class="w-full p-2 border rounded-md" required>
+                    </div>
+                    <div class="mb-4">
+                        <select class="w-full p-2 border rounded-md" required>
+                            <option value="" disabled selected>Phone Number*</option>
+                            <option value="+91">+91 (India)</option>
+                            <!-- Add more options as needed -->
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <select class="w-full p-2 border rounded-md" required>
+                            <option value="" disabled selected>Inquiry for*</option>
+                            <option value="myself">Myself</option>
+                            <option value="company">My Company</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <select class="w-full p-2 border rounded-md" required>
+                            <option value="" disabled selected>Total Work Experience (in years)*</option>
+                            <option value="0-1">0-1</option>
+                            <option value="1-3">1-3</option>
+                            <option value="3-5">3-5</option>
+                            <option value="5+">5+</option>
+                        </select>
+                    </div>
+                    <div class="mb-4 flex items-center">
+                        <input type="checkbox" class="mr-2" required>
+                        <label class="text-sm text-gray-600">By providing your contact details, you agree to our Privacy Policy</label>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-600 text-white p-3 rounded-md hover:bg-blue-700">Talk to our advisor</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+
+<!--Online Data Science Course Overview-->
+    <div class="mb-8 grid grid-cols-1 md:grid-cols-1 container mx-auto px-4 py-6 sm:px-6 sm:py-8 md:px-8 md:py-10 lg:px-10 lg:py-12 ">
+        <h1 class="text-3xl md:text-4xl sm:text-4xl font-bold text-gray-800 mb-4">Online Data Science Course Overview</h1> <br>
+        <p class="text-gray-600 text-lg px-7">
+            This Data Science course, in collaboration with IBM, propels your career to become a certified data. <br>
+             The training program helps you gain expertise in skills like Python, SQL, Excel, Machine Learning, Tableau, generative AI, and more. <br>
+             Dive deep into data interpretation nuances and enhance your programming skills to elevate your Data Science career.
+        </p>
+          <br>
+        <h2 class="text-2xl sm:text-2xl lg:text-3xl font-bold mb-6 text-gray-800">Key Features</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-7">
+            <!-- Feature Item -->
+            <div class="flex items-start space-x-3">
+                <div class="text-blue-500">✓</div>
+                <p class="text-gray-700 text-lg">Simplilearn’s JobAssist helps you get noticed by top hiring companies</p>
+            </div>
+            <div class="flex items-start space-x-3">
+                <div class="text-blue-500">✓</div>
+                <p class="text-gray-700 text-lg">Masterclasses from IBM experts</p>
+            </div>
+            <div class="flex items-start space-x-3">
+                <div class="text-blue-500">✓</div>
+                <p class="text-gray-700 text-lg ">Dedicated live sessions by faculty of industry experts</p>
+            </div>
+            <div class="flex items-start space-x-3">
+                <div class="text-blue-500">✓</div>
+                <p class="text-gray-700 text-lg">Industry-recognized Data Scientist Master’s certificate from Simplilearn</p>
+            </div>
+            <div class="flex items-start space-x-3">
+                <div class="text-blue-500">✓</div>
+                <p class="text-gray-700 text-lg ">Industry-recognized IBM certifications for IBM courses</p>
+            </div>
+            <div class="flex items-start space-x-3">
+                <div class="text-blue-500">✓</div>
+                <p class="text-gray-700 text-lg ">Ask-Me-Anything (AMA) sessions with IBM leadership</p>
+            </div>
+            <div class="flex items-start space-x-3">
+                <div class="text-blue-500">✓</div>
+                <p class="text-gray-700 text-lg ">Capstone from 3 domains and 25+ projects</p>
+            </div>
+            <div class="flex items-start space-x-3">
+                <div class="text-blue-500">✓</div>
+                <p class="text-gray-700 text-lg ">Exclusive hackathons conducted by IBM</p>
+            </div>
+            <div class="flex items-start space-x-3">
+                <div class="text-blue-500">✓</div>
+                <p class="text-gray-700 text-lg ">Lifetime access to self-paced learning content</p>
+            </div>
+            <div class="flex items-start space-x-3">
+                <div class="text-blue-500">✓</div>
+                <p class="text-gray-700 text-lg ">Program crafted to initiate your journey as a Data Scientist</p>
+            </div>
+            <div class="flex items-start space-x-3">
+                <div class="text-blue-500">✓</div>
+                <p class="text-gray-700 text-lg ">Integrated labs for hands-on learning experience</p>
+            </div>
+        </div>
+    </div>
+
+
+<!--Cerification-->
+    <section class="bg-blue-50 py-8 sm:py-10 md:py-12 lg:py-14">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl sm:text-4xl font-bold mb-6">Data Science Certification Advantage</h2>
+            <p class="text-lg text-gray-600 mb-6 px-4">Get certified in data science with IBM and Simplilearn certificates, plus access to expert-led masterclasses.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <img src="Simplilearn-landscape-Data-Scientist-Certificate.avif" alt="Certificate" class="h-130 w-full object-cover mb-4 px-4">
+                    <h3 class="text-2xl font-semibold mb-4 px-4">Earn Your Data Scientist Certificate</h3>
+                    <ul class="space-y-2 text-lg">
+                        <li><i class="px-4 fa-regular fa-circle-check text-blue-500 mr-2"></i> Industry-recognized certificate</li>
+                        <li><i class="px-4 fa-regular fa-circle-check text-blue-500 mr-2"></i> Dedicated live sessions</li>
+                        <li><i class="px-4 fa-regular fa-circle-check text-blue-500 mr-2"></i> Lifetime access to content</li>
+                    </ul>
+                </div>
+                <div>
+                    <img src="Simplilearn-IBM-certificate_Data-Analysis-nn.avif" alt="IBM Advantage" class="h-130 w-full object-cover mb-4 px-4">
+                    <h3 class="text-2xl font-semibold mb-4 px-4">Get Ahead With IBM Advantage</h3>
+                    <ul class="space-y-2 text-lg">
+                        <li><i class="px-5 fa-regular fa-circle-check text-blue-500 mr-2"></i> Content and certificate by IBM</li>
+                        <li><i class="px-5 fa-regular fa-circle-check text-blue-500 mr-2"></i> Masterclasses by IBM experts</li>
+                        <li><i class="px-5 fa-regular fa-circle-check text-blue-500 mr-2"></i> Hackathons and AMA Sessions</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!--About online data analyst-->
+      <section class=" px-8 py-6 sm:px-6 sm:py-8 md:px-8 md:py-10 lg:px-42 lg:py-12">
+      <h4 class="text-3xl md:text-4xl sm:text-4xl font-bold">About Online Data Analyst Course</h4> 
+      <br>
+      <div class="mx-auto bg-white rounded-xl shadow-md overflow-hidden flex flex-col md:flex-row">
+        <!-- Left side: Questions -->
+        <div class="w-full md:w-1/3 border-r border-gray-300 px-7">
+          <div class="flex flex-col">
+            <button onclick="showAnswer(0)" class="text-left px-4 py-3 hover:bg-blue-50 transition-all duration-200 text-gray-800 font-medium text-xl">Why become a Data Analyst?</button>
+            <button onclick="showAnswer(1)" class="text-left px-4 py-3 hover:bg-blue-50 transition-all duration-200 text-gray-800 font-medium text-xl">What are the Data Analyst course learning objectives?</button>
+            <button onclick="showAnswer(2)" class="text-left px-4 py-3 hover:bg-blue-50 transition-all duration-200 text-gray-800 font-medium text-xl">What job roles can one apply for after completing this Data Anaalyst certification course?</button>
+          </div>
+        </div>
+    
+        <!-- Right side: Answers -->
+        <div class="w-full md:w-2/3 p-4 sm:p-6 px-7">
+          <div class="answer default">
+            <h2 class="text-2xl font-bold mb-2">Why become a Data Analyst?</h2>
+            <p class="text-gray-600 text-lg sm:text-base lg:text-base">Today, businesses across all industries must be data-driven to remain
+               competitive, and they need qualified data analysts to make sense of massive and complex data 
+               sets to make better-informed decisions. Becoming a data analyst 
+               opens many high-paying, rewarding career opportunities. Professionals proficient
+                in data analytics can apply their skills to many other job roles throughout
+                 their careers, as well. This Data Analyst training program will enable you to
+                  master descriptive and inferential statistics, hypothesis testing, regression analysis,
+                   data blending, data extraction, and forecasting to help you meet the increasing demand in
+                    this field.</p>
+
+              <div>Read more about <span class="text-blue-500">how to become a data analyst here.</span></div>
+          </div>
+          <div class="answer hidden">
+            <h2 class="text-xl sm:text-2xl font-bold mb-2">Data Analyst Course Learning Objectives</h2>
+            <p class="text-gray-600 text-lg lg:text-base">In this Data Analyst certification course, you will learn the latest analytics tools and techniques, how to work with SQL databases and basic SQL queries, R and Python programming, raw data manipulation, the art of creating data visualizations, and how to apply statistics and predictive analytics in a business environment.</p>
+          </div>
+          <div class="answer hidden">
+            <h2 class="text-xl sm:text-2xl font-bold mb-2">Job Roles After Certification</h2>
+            <p class="text-gray-600 text-lg lg:text-base">Upon completing the Data Analyst certification course, you will have the data analysis skills necessary to get your dream job in the data analytics space. Apart from Data Analyst, other job titles include:
+              <ul class="list-disc pl-5 mt-2 text-gray-600 text-sm sm:text-base">
+                <li>Data Analytics Manager/Lead</li>
+                <li>Business Analyst/Senior Business Analyst</li>
+                <li>Business Intelligence Analyst</li>
+                <li>Business Intelligence Engineer</li>
+                <li>Various managerial roles</li>
+            </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!--Data Analyst Training Program Learning Path-->
+    <div class="bg-gradient-to-r from-blue-500 to-green-500 px-8 py-6 sm:px-6 sm:py-8 md:px-8 md:py-10 lg:px-42 lg:py-12 mx-auto  ">
+      <!-- Heading -->
+      <h1 class="text-3xl md:text-4xl sm:text-4xl font-bold mb-2lg:text-left">
+        Data Analyst Training Program Learning Path
+      </h1>
+      <p class="text-xl text-gray-600 mb-6 px-9 lg:text-left py-7">
+        Accelerate your career trajectory with our extensive data analyst course curriculum. Delve into foundational statistics, master data analysis with Python and R, navigate databases using SQL, and harness the power of visualization with Tableau and Power BI.
+      </p>
+  
+      <!-- Main Layout -->
+      <div class="flex flex-col lg:flex-row gap-6 px-7">
+        
+        <!-- Left Section: Learning Path -->
+        <div class="w-full lg:w-2/3 bg-blue-50 p-6 rounded-md shadow-sm">
+          <h2 class="text-xl font-semibold mb-4">Learning Path</h2>
+  
+          <div class="space-y-2 text-lg">
+            <div class="flex justify-between border border-gray-300 px-3 py-2 bg-white rounded">
+              <span>Business Analytics with Excel</span>
+              <a href="#" class="text-blue-600 font-medium">Preview</a>
+            </div>
+            <div class="flex justify-between border border-gray-300 px-3 py-2 bg-white rounded">
+              <span>SQL Certification Course</span>
+              <a href="#" class="text-blue-600 font-medium">Preview</a>
+            </div>
+            <div class="flex justify-between border border-gray-300 px-3 py-2 bg-white rounded">
+              <span>Programming Basics and Data Analytics with Python</span>
+              <a href="#" class="text-blue-600 font-medium">Preview</a>
+            </div>
+            <div class="flex justify-between border border-gray-300 px-3 py-2 bg-white rounded">
+              <span>R Programming for Data Science</span>
+              <a href="#" class="text-blue-600 font-medium">Preview</a>
+            </div>
+            <div class="flex justify-between border border-gray-300 px-3 py-2 bg-white rounded">
+              <span>Data Analytics with R</span>
+              <a href="#" class="text-blue-600 font-medium">Preview</a>
+            </div>
+            <div class="flex justify-between border border-gray-300 px-3 py-2 bg-white rounded">
+              <span>Tableau Desktop Specialist Certification Training</span>
+              <a href="#" class="text-blue-600 font-medium">Preview</a>
+            </div>
+            <div class="flex justify-between border border-gray-300 px-3 py-2 bg-white rounded">
+              <span>Data Analyst Masters Capstone</span>
+              <a href="#" class="text-blue-600 font-medium">Preview</a>
+            </div>
+          </div>
+  
+          <div class="mt-4 text-lg">
+            <h3 class="font-semibold">Electives:</h3>
+            <ul class="list-disc list-inside text-gray-700 mt-2">
+              <li>PL-300 Microsoft Power BI Certification Training</li>
+              <li>Industry Master Class – Data Analytics</li>
+            </ul>
+          </div>
+  
+          <button class="mt-6 px-6 py-2 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 transition">
+            Download Syllabus
+          </button>
+        </div>
+  
+        <!-- Right Section: Contact + Form -->
+        <div class="w-full lg:w-1/3 space-y-4">
+          <!-- Contact Card -->
+          <div class="border p-4 rounded-md text-center shadow-sm">
+            <p class="text-xl text-gray-600">Contact Us</p>
+            <p class="text-xl font-bold mt-1 text-blue-800">1800-212-7688</p>
+            <p class="text-gray-500 text-xl">(Toll Free)</p>
+          </div>
+  
+          <!-- Form Card -->
+          <div class="border p-4 rounded-md shadow-sm">
+            <h3 class="text-xl font-semibold mb-4">Request more information</h3>
+            <form class="space-y-3 text-lg">
+              <input type="text" placeholder="Name*" class="w-full border px-3 py-2 rounded-md" />
+              <input type="email" placeholder="Email*" class="w-full border px-3 py-2 rounded-md" />
+  
+              <div class="flex gap-2">
+                <select class="border px-2 py-2 rounded-md">
+                  <option>+91</option>
+                </select>
+                <input type="tel" placeholder="Phone Number*" class="w-full border px-3 py-2 rounded-md" />
+              </div>
+  
+              <div class="flex gap-4">
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="inquiry" checked />
+                  <span>Myself</span>
+                </label>
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="inquiry" />
+                  <span>My Company</span>
+                </label>
+              </div>
+  
+              <select class="w-full border px-3 py-2 rounded-md">
+                <option>Total Work Experience (in years)*</option>
+              </select>
+  
+              <label class="flex items-start gap-2 text-xs text-gray-600">
+                <input type="checkbox" class="mt-1" />
+                <span>By providing your contact details, you agree to our <a href="#" class="text-blue-600 underline">Privacy Policy</a></span>
+              </label>
+  
+              <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition">SUBMIT</button>
+            </form>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  
+
+<!--Skills-->
+        <h2 class="text-3xl md:text-4xl sm:text-4xl font-bold mb-6 text-gray-800 px-4 sm:px-6 lg:px-42 py-8">8+ Skills Covered</h2> 
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 px-4 sm:px-12 lg:px-50">
+            <!-- Feature Item -->
+            <div class="flex items-start space-x-3">
+                <div class="text-blue-500"><i class="fa-regular fa-circle-check text-2xl" style="color: #2b7dd5;"></i></div>
+                <p class="text-gray-700 text-lg">Data Analytics</p>
+            </div>
+            <div class="flex items-start space-x-3">
+                <div class="text-blue-500"><i class="fa-regular fa-circle-check text-2xl" style="color: #2b7dd5;"></i></div>
+                <p class="text-gray-700 text-lg">Statistical Analysis using Excel</p>
+            </div>
+            <div class="flex items-start space-x-3">
+                <div class="text-blue-500"><i class="fa-regular fa-circle-check text-2xl" style="color: #2b7dd5;"></i></div>
+                <p class="text-gray-700 text-lg ">Data Analysis using Python and R</p>
+            </div>
+            <div class="flex items-start space-x-3">
+                <div class="text-blue-500"><i class="fa-regular fa-circle-check text-2xl" style="color: #2b7dd5;"></i></div>
+                <p class="text-gray-700 text-lg">Data Visualization Tableau and Power BI</p>
+            </div>
+            <div class="flex items-start space-x-3">
+                <div class="text-blue-500"><i class="fa-regular fa-circle-check text-2xl" style="color: #2b7dd5;"></i></div>
+                <p class="text-gray-700 text-lg ">Linear and logistic regression modules</p>
+            </div>
+            <div class="flex items-start space-x-3">
+                <div class="text-blue-500"><i class="fa-regular fa-circle-check text-2xl" style="color: #2b7dd5;"></i></div>
+                <p class="text-gray-700 text-lg ">Clustering using KMeans</p>
+            </div>
+            <div class="flex items-start space-x-3">
+                <div class="text-blue-500"><i class="fa-regular fa-circle-check text-2xl" style="color: #2b7dd5;"></i></div>
+                <p class="text-gray-700 text-lg ">Supervised Learning</p>
+            </div>
+            <div class="flex items-start space-x-3">
+                <div class="text-blue-500"><i class="fa-regular fa-circle-check text-2xl" style="color: #2b7dd5;"></i></div>
+                <p class="text-gray-700 text-lg ">Unsupervised Learning</p>
+            </div>
+        </div>
+        <br>
+ 
+<!--tools-->        
+        <section class="bg-gradient-to-r from-[#ffb6d3] to-[#ed4c39]  px-8 py-6 sm:px-6 sm:py-8 md:px-8 md:py-10 lg:px-42 lg:py-12">
+          <h2 class="text-3xl md:text-4xl sm:text-4xl font-bold text-gray-800 mb-6">9+ Tools Covered</h2>
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6 py-9 px-7">
+              <div class="flex justify-center">
+                  <img src="microsoft-excel13.avif" alt="Microsoft Excel Logo" class="h-12 sm:h-16 md:h-20 object-contain">
+              </div>
+              <div class="flex justify-center">
+                  <img src="Numpy-Logo4.avif" alt="NumPy Logo" class="h-12 sm:h-16 md:h-20 object-contain">
+              </div>
+              <div class="flex justify-center">
+                  <img src="Pandas_logo5.avif" alt="Pandas Logo" class="h-12 sm:h-16 md:h-20 object-contain">
+              </div>
+              <div class="flex justify-center">
+                  <img src="Scipy-Logo 6.avif" alt="SciPy Logo" class="h-12 sm:h-16 md:h-20 object-contain">
+              </div>
+              <div class="flex justify-center">
+                  <img src="PowerBI-logo14.avif" alt="Power BI Logo" class="h-12 sm:h-16 md:h-20 object-contain">
+              </div>
+              <div class="flex justify-center">
+                  <img src="Python-Logo7.avif" alt="Python Logo" class="h-12 sm:h-16 md:h-20 object-contain">
+              </div>
+              <div class="flex justify-center">
+                  <img src="R-Logo8.avif" alt="R Logo" class="h-12 sm:h-16 md:h-20 object-contain">
+              </div>
+              <div class="flex justify-center">
+                  <img src="Tableau_Logo_12311.avif" alt="Tableau Logo" class="h-12 sm:h-16 md:h-20 object-contain">
+              </div>
+              <div class="flex justify-center">
+                  <img src="mysql.avif" alt="MySQL Logo" class="h-12 sm:h-16 md:h-20 object-contain">
+              </div>
+          </div>
+      </section>
+
+<!--Industry Projects-->
+  <div class="px-8 py-4 sm:px-6 sm:py-8 md:px-8 md:py-10 lg:px-42 lg:py-12 mx-auto ">
+    <!-- Section Heading -->
+    <h2 class="text-3xl md:text-4xl sm:text-4xl font-bold py-9 mb-4">Industry Projects</h2>
+
+    <!-- Slider -->
+    <div class="relative ">
+      <!-- Cards container -->
+      <div id="slider" class="flex overflow-x-auto space-x-4 pb-4 scrollbar-hide scroll-smooth snap-x snap-mandatory ">
+        <!-- Card 1 -->
+        <div class="min-w-[300px] bg-blue-50 p-4 rounded-lg shadow-md snap-start">
+          <h3 class="font-bold text-xl mb-2">Project 1</h3>
+          <h2 class="font-semibold text-lg mb-1 ">APP RATING RECOMMENDATIONS</h2>
+          <p class="text-1xl text-gray-600">
+            The Google Play Store team launches visibility booster for promising apps - displayed higher in recommendations. Build model to predict app ratings with provided app data.
+          </p>
+        </div>
+        <!-- Card 2 -->
+        <div class="min-w-[300px] bg-blue-50 p-4 rounded-lg shadow-md snap-start">
+          <h3 class="font-bold text-xl mb-2">Project 2</h3>
+          <h2 class="font-semibold text-lg mb-1">COMCAST TELECOM CUSTOMER COMPLAINTS</h2>
+          <p class="text-sm text-gray-600">
+            Comcast promises better customer service but continues falling short, despite repeated vows to improve. Leverage database of customer complaints to finally boost satisfaction.
+          </p>
+        </div>
+        <!-- Card 3 -->
+        <div class="min-w-[300px] bg-blue-50 p-4 rounded-lg shadow-md snap-start">
+          <h3 class="font-bold text-xl mb-2">Project 3</h3>
+          <h2 class="font-semibold text-lg mb-1">ECOMMERCE SALES DASHBOARD</h2>
+          <p class="text-sm text-gray-600">
+            E-commerce company seeks sales dashboard to analyze product categories, ease selection, and boost purchases. Help users review info on products they're considering.
+          </p>
+        </div>
+         <!-- Card 4 -->
+         <div class="min-w-[300px] bg-blue-50 p-4 rounded-lg shadow-md snap-start">
+            <h3 class="font-bold text-xl mb-2">Project 4</h3>
+            <h2 class="font-semibold text-lg mb-1">COMPARATIVE STUDY OF COUNTRIES</h2>
+            <p class="text-sm text-gray-600">
+                Create a dashboard to compare different countries on various parameters using the sample insurance data set and world development indicators data set.
+            </p>
+          </div>
+           <!-- Card 5 -->
+        <div class="min-w-[300px] bg-blue-50 p-4 rounded-lg shadow-md snap-start">
+            <h3 class="font-bold text-xl mb-2">Project 5</h3>
+            <h2 class="font-semibold text-lg mb-1">SALES PERFORMANCE ANALYSIS</h2>
+            <p class="text-sm text-gray-600">
+                Build dashboard showing monthly sales by segment and category, flagging those meeting/exceeding/missing targets - enabling clients to easily identify areas needing attention.
+            </p>
+          </div>
+           <!-- Card 6 -->
+        <div class="min-w-[300px] bg-blue-50 p-4 rounded-lg shadow-md snap-start">
+            <h3 class="font-bold text-xl mb-2">Project 6</h3>
+            <h2 class="font-semibold text-lg mb-1">ANALYSIS OF SALES REPORT OF A CLOTHES MANUFACTURING OUTLET</h2>
+            <p class="text-sm text-gray-600">
+              Fashion retailer needs to expand product line. Aims to grasp patterns, automate product attributes, predict sales, understand sales drivers, and standardize ratings with data.
+            </p>
+          </div>
+           <!-- Card 7 -->
+        <div class="min-w-[300px] bg-blue-50 p-4 rounded-lg shadow-md snap-start">
+            <h3 class="font-bold text-xl mb-2">Project 7</h3>
+            <h2 class="font-semibold text-lg mb-1">COLLEGE ADMISSION</h2>
+            <p class="text-sm text-gray-600">
+                Each year, US colleges receive thousands of applications from international students. To streamline the process, the education department must analyze factors affecting admission.
+            </p>
+          </div>
+           <!-- Card 8 -->
+        <div class="min-w-[300px] bg-blue-50 p-4 rounded-lg shadow-md snap-start">
+            <h3 class="font-bold text-xl mb-2">Project 8</h3>
+            <h2 class="font-semibold text-lg mb-1">IDENTIFYING AND RECOMMENDING THE BEST RESTAURANTS</h2>
+            <p class="text-sm text-gray-600">
+                Upgrading B2C portal with smart automation. Forming matrices for top-notch eateries and suggestions. Analysis-based reports and visual dashboards for sharing insights.
+            </p>
+          </div>
+           <!-- Card 9 -->
+        <div class="min-w-[300px] bg-blue-50 p-4 rounded-lg shadow-md snap-start">
+            <h3 class="font-bold text-xl mb-2">Project 9</h3>
+            <h2 class="font-semibold text-lg mb-1">PREDICTING LOAN DEFAULTERS</h2>
+            <p class="text-sm text-gray-600">
+                High vehicle loan defaults cause losses, leading to stricter underwriting. Need a better risk model. Study to identify default factors and predict defaults.
+            </p>
+          </div>
+           <!-- Card 10 -->
+        <div class="min-w-[300px] bg-blue-50 p-4 rounded-lg shadow-md snap-start">
+            <h3 class="font-bold text-xl mb-2">Project 10</h3>
+            <h2 class="font-semibold text-lg mb-1">EXAMINING FACTORS RESPONSIBLE FOR HEART ATTACKS</h2>
+            <p class="text-sm text-gray-600">
+                Global heart disease deaths are high. We need a system to predict heart attacks. Study data on cardiovascular health, identify key factors and create a predictive model.
+            </p>
+          </div>
+      </div>
+      <p class="text-gray-500 text-sm mt-4 px-4">
+        <span class="font-semibold">Disclaimer:</span> The projects have been built leveraging real publicly available datasets from organizations.
+    </p>
+      <!-- Arrows and Indicator in one line -->
+      <div class="flex justify-center items-center mt-4 space-x-4">
+        <!-- Left arrow -->
+        <button onclick="scrollSlider(-1)"
+          class="bg-white border border-gray-300 rounded-full p-2 shadow hover:bg-gray-200">
+          &#8592;
+        </button>
+
+        <!-- Indicator line -->
+       <!-- <div class="flex space-x-2">
+          <div class="w-5 h-1 bg-indigo-600 rounded-full"></div>
+          <div class="w-5 h-1 bg-gray-400 rounded-full"></div>
+          <div class="w-5 h-1 bg-gray-400 rounded-full"></div>
+          <div class="w-5 h-1 bg-gray-400 rounded-full"></div>
+          <div class="w-5 h-1 bg-gray-400 rounded-full"></div>
+          <div class="w-5 h-1 bg-gray-400 rounded-full"></div>
+          <div class="w-5 h-1 bg-gray-400 rounded-full"></div>
+          <div class="w-5 h-1 bg-gray-400 rounded-full"></div>
+          <div class="w-5 h-1 bg-gray-400 rounded-full"></div>
+        </div>-->
+
+        <!-- Right arrow -->
+        <button onclick="scrollSlider(1)"
+          class="bg-white border border-gray-300 rounded-full p-2 shadow hover:bg-gray-200">
+          &#8594;
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function scrollSlider(direction) {
+      const container = document.getElementById('slider');
+      const scrollAmount = 320;
+      container.scrollBy({
+        left: direction * scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  </script>
+
+<!--Career Support-->
+        <section class="bg-gradient-to-r from-[#fcaafc] to-[#abda92] px-8 py-6 sm:px-6 sm:py-8 md:px-8 md:py-10 lg:px-42 lg:py-12 mx-auto ">
+            <h2 class="text-3xl md:text-4xl sm:text-4xl font-bold mb-8 px-2">Career Support</h2>
+        
+            <div class="flex flex-col lg:flex-row gap-8 px-7">
+              <!-- Left Box -->
+              <div class="bg-gradient-to-br from-blue-500 to-blue-700 text-white p-8 rounded-md shadow-md flex-1 ">
+                <h3 class="text-2xl font-bold mb-4 py-5">Simplilearn JobAssist Program</h3>
+                <p class="mb-6 text-xl py-3">
+                    Simplilearn Job Assist program is an India Specific Offering in partnership with IIMJobs. The Program offers extended support to certified learners to land their dream jobs.
+                </p>
+                <a href="#" class="inline-flex items-center bg-white text-blue-600 font-semibold px-5 py-2 rounded hover:bg-gray-100 transition">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v12m0 0l3-3m-3 3l-3-3m6 5H6" />
+                  </svg>
+                  Download Brochure
+                </a>
+              </div>
+        
+              <!-- Right Content List -->
+              <div class="flex-1 space-y-6">
+                <!-- Item -->
+                <div class="flex items-start space-x-4">
+                  <img src="Career-Support-1.avif" alt="IIMJobs Pro" class="w-24 h-24 object-cover rounded-md">
+                  <div>
+                    <h4 class="font-semibold text-lg">IIMJobs Pro-Membership of 6 months for free</h4>
+                  </div>
+                </div>
+        
+                <!-- Item -->
+                <div class="flex items-start space-x-4">
+                  <img src="Career-Support-2_1.avif" alt="Resume Help" class="w-24 h-24 object-cover rounded-md">
+                  <div>
+                    <h4 class="font-semibold text-lg">Resume building assistance to create a powerful resume</h4>
+                  </div>
+                </div>
+        
+                <!-- Item -->
+                <div class="flex items-start space-x-4">
+                  <img src="Career-Support-2.avif" alt="Spotlight" class="w-24 h-24 object-cover rounded-md">
+                  <div>
+                    <h4 class="font-semibold text-lg">Spotlight on IIMJobs for highlighting your profile to recruiters</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </section>
+
+<!--Join the data analystics-->        
+        <section class="px-8 py-6 sm:px-6 sm:py-8 md:px-8 md:py-10 lg:px-42 lg:py-12 mx-auto "px-42">
+            <h2 class="text-3xl md:text-4xl sm:text-4xl font-bold text-left mb-4">Join the Data Analytics industry</h2>
+            <p class="mb-10 text-xl px-7">
+              Data Science and Analytics jobs are projected to see growth by <span class="text-blue-600 font-semibold">31%</span> <br>in the upcoming decade.
+              The data analytics market is estimated to reach <br><span class="text-blue-600 font-semibold">$24.63 Bn</span> in 2021 and is projected to grow at a compound annual growth rate of 
+              <span class="text-blue-600 font-semibold">25%</span> from 2021 to 2030.
+            </p>
+        
+            <!-- Stats Cards -->
+            <div class="grid gap-6 md:grid-cols-3 px-7">
+              <div class="bg-blue-50 p-6 rounded-lg shadow-md text-center">
+                <img src="Bag.webp" alt="" class="text-left mx-auto mb-4 w-12 h-12">
+                <div class="text-xl font-bold">11.5 M</div>
+                <div class="text-2xl font-semibold mt-2">Expected New Jobs<br>For Data Science And Analytics</div>
+                <div class="text-xs text-gray-500 mt-2">Source: Analytics Insight</div>
+              </div>
+
+              <div class="bg-blue-50 p-6 rounded-lg shadow-md text-center">
+                <img src="Arrow.webp" alt="" class="mx-auto mb-4 w-12 h-12">
+                <div class="text-xl font-bold">31%</div>
+                <div class="text-2xl font-semibold mt-2">Annual Job Growth<br>By 2030</div>
+                <div class="text-xs text-gray-500 mt-2">Source: 365 Data Science</div>
+              </div>
+        
+              <div class="bg-blue-50 p-6 rounded-lg shadow-md text-center">
+                <img src="Wallet.webp" alt="" class="mx-auto mb-4 w-12 h-12">
+                <div class="text-xl font-bold">INR 4L-11L</div>
+                <div class="text-2xl font-bold mt-2">Average Annual<br>Salary</div>
+                <div class="text-xs text-gray-500 mt-2">Source: Glassdoor</div>
+              </div>
+            </div>
+        </section>
+
+<!--Compaines Hiring-->        
+        <div class="px-8 py-6 sm:px-6 sm:py-8 md:px-8 md:py-10 lg:px-42 lg:py-12 mx-auto">
+          <h3 class="text-3xl md:text-4xl sm:text-4xl font-bold mb-6">Companies Hiring Data Analysts</h3>
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 sm:gap-6 px-7 py-8">
+              <img src="EY1.avif" alt="EY Logo" class="w-full h-20 sm:h-24 object-contain">
+              <img src="Amazon2.avif" alt="Amazon Logo" class="w-full h-20 sm:h-24 object-contain">
+              <img src="Microsoft3.avif" alt="Microsoft Logo" class="w-full h-20 sm:h-24 object-contain">
+              <img src="Facebook4.avif" alt="Facebook Logo" class="w-full h-20 sm:h-24 object-contain">
+              <img src="Adobe1.avif" alt="Adobe Logo" class="w-full h-20 sm:h-24 object-contain">
+              <img src="Apple26.webp" alt="Apple Logo" class="w-full h-20 sm:h-24 object-contain">
+              <img src="Oracle_logo7.avif" alt="Oracle Logo" class="w-full h-20 sm:h-24 object-contain">
+              <img src="JPMorgan-Chase8.avif" alt="JPMorgan Chase Logo" class="w-full h-20 sm:h-24 object-contain">
+              <img src="Goldman_Sachs9.webp" alt="Goldman Sachs Logo" class="w-full h-20 sm:h-24 object-contain">
+              <img src="Google10.avif" alt="Google Logo" class="w-full h-20 sm:h-24 object-contain">
+          </div>
+      </div>
+
+
+<!--Batch profile-->      
+        <section class="px-8 py-6 sm:px-6 sm:py-8 md:px-8 md:py-10 lg:px-42 lg:py-12 mx-auto bg-blue-100">
+            <h2 class="text-3xl md:text-4xl sm:text-4xl font-bold py-4 sm:py-6 md:text-left">Batch Profile</h2>
+            <p class="mb-6 sm:mb-8 max-w-3xl text-base sm:text-lg md:text-xl text-gray-800 md:text-left mx-auto md:mx-0  px-7">
+              This program caters to working professionals from a variety of industries and backgrounds; the diversity of our students adds richness to class discussions and interactions.
+            </p>
+        
+            <!-- Industry & Companies -->
+            <div class="bg-white rounded-xl shadowp-4 sm:p-6 md:p-10 px-4">
+              <h3 class="text-xl sm:text-2xl font-bold mb-4 text-center md:text-left">Industry</h3>
+              <div class="flex flex-col md:flex-row gap-4 gap-6">
+                
+                <!-- Donut Chart (use a real chart or SVG in practice) -->
+                <div class="flex-1 sm:px-4">
+                    <h4 class="text-base sm:text-lg font-semibold mb-2 sm:mb-3 text-center md:text-left">Industry</h4>
+                    <div class="flex justify-center py-4 sm:py-6">
+                  <img src="WhatsApp Image 2025-04-24 at 8.38.45 PM (1).jpeg" alt="Donut Chart" class="h-40 w-40 object-contain" />
+                    </div>
+                  <ul class="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg space-y-1 sm:space-y-2 text-center md:text-left"><br>
+                    <li><span class="inline-block w-4 h-4 sm:w-5 sm:h-5  bg-blue-600 rounded- mr-2"></span>Information Technology - 32%</li>
+                    <li><span class="inline-block w-4 h-4 sm:w-5 sm:h-5  bg-cyan-400 rounded- mr-2"></span>BFSI - 19%</li>
+                    <li><span class="inline-block w-4 h-4 sm:w-5 sm:h-5  bg-purple-600 rounded- mr-2"></span>Software product - 13%</li>
+                    <li><span class="inline-block w-4 h-4 sm:w-5 sm:h-5  bg-orange-400 rounded- mr-2"></span>Pharma & Healthcare - 11%</li>
+                    <li><span class="inline-block w-4 h-4 sm:w-5 sm:h-5  bg-emerald-500 rounded- mr-2"></span>Retail - 10%</li>
+                    <li><span class="inline-block w-4 h-4 sm:w-5 sm:h-5  bg-pink-400 rounded- mr-2"></span>Others - 15%</li>
+                  </ul>
+                </div>
+        
+                <!-- Company Logos -->
+                <div class="flex-1 mt-4 md:mt-0">
+                  <h4 class="text-base sm:text-lg font-semibold mb-2 sm:mb-3 text-center md:text-left">Companies</h4>
+                  <div class="grid grid-cols-3 sm:grid-cols-4 gap-2 sm:gap-4 py-4 sm:py-6 md:py-9 items-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" class="h-7" alt="Amazon">
+                    <img src="EY1.avif" class="h-6 sm:h-7 mx-auto" alt="EY">
+                    <img src="fidelity3.avif" class="h-8 sm:h-10 mx-auto" alt="Fidelity">
+                    <img src="Johnson_and_Johnson4.avif" class="h-8 sm:h-10 mx-auto" alt="J&J">
+                    <img src="Vodafone.avif" class="h-8 sm:h-10 mx-auto" alt="Vodafone">
+                    <img src="broadcom6.avif" class="h-8 sm:h-10 mx-auto" alt="Broadcom">
+                    <img src="Accenture7.avif" class="h-12 sm:h-16 mx-auto" alt="Accenture">
+                    <img src="nomura9.avif" class="h-8 sm:h-10 mx-auto" alt="Nomura">
+                    <img src="ericsson10.avif" class="h-8 sm:h-10 mx-auto" alt="Ericsson">
+                    <img src="infosys11.avif" class="h-8 sm:h-10 mx-auto" alt="Infosys">
+                    <img src="Nvidia13.avif" class="h-8 sm:h-10 mx-auto" alt="NVIDIA">
+                    <img src="TCS12.avif" class="h-8 sm:h-10 mx-auto" alt="TCS">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        
+<!--Alumni Review-->          
+          <section class="px-4 sm:px-8 md:px-16 lg:px-42 py-6 sm:py-8 md:py-10">
+            <h2 class="text-3xl md:text-4xl sm:text-4xl font-bold mb-6 sm:mb-8 text-center md:text-left">Alumni Review</h2>
+        
+            <div class="flex flex-col md:flex-row gap-6 items-center md:items-start px-7">
+              <!-- Video / Image Section -->
+              <div class="w-full md:w-1/2">
+                <div class="relative">
+                  <img 
+                    src="how_to_become_a_data_scientist.avif" 
+                    alt="Alumni Review" 
+                    class="rounded-lg shadow-lg w-full"
+                  />
+                  <button class="absolute inset-0 flex items-center justify-center">
+                    <svg class="h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 text-white bg-black bg-opacity-50 rounded-full p-2" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+        
+              <!-- Text Section -->
+              <div class="w-full md:w-1/2 mt-4 md:mt-0">
+                <p class="text-xl sm:text-xl md:text-2xl font-medium mb-3 sm:mb-4 text-gray-800 text-center md:text-left">
+                  This course has been crucial in my transition from a Senior Operations Executive to a Data Analyst.
+                  I have been looking to upskill in the field of Data Science for a long time, and Simplilearn's Data Analyst Masters Course has helped me acquire the job-ready skills I needed.
+                </p>
+                <h3 class="font-semibold text-lg sm:text-xl md:text-xl text-center md:text-left">Ankit Dongare</h3>
+                <span class="text-blue-600 text-lg sm:text-xl block text-center md:text-left">Data Analyst</span>
+              </div>
+            </div>
+          </section>
+
+<!--What others learnesrs are saying-->      
+          <section class="bg-gradient-to-r from-[#ffd12d] to-[#48ad52] px-8 py-6 sm:px-6 sm:py-8 md:px-8 md:py-10 lg:px-42 lg:py-12 mx-auto">
+            <h2 class="text-3xl md:text-4xl sm:text-4xl font-bold mb-6 sm:mb-8">What other learners are saying</h2>
+            <div class="relative max-w-6xl mx-auto px-1">
+                <!-- Slider Container -->
+               <div id="slider" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide">
+                    <!-- Card 1 -->
+                    <div class="flex-none w-full sm:w-1/2 lg:w-1/3 snap-center px-2">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-gray-200 rounded-full mr-4"><img src="WhatsApp Image 2025-04-25 at 1.26.44 PM.jpeg" alt=""></div>
+                                <div>
+                                    <h3 class="text-lg font-semibold">Manish Beniwal</h3>
+                                    <p class="text-sm text-gray-500">Advisor Reporting - Global Mobility at Rio Tinto</p>
+                                    <div class="flex text-yellow-400">★★★★★</div>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 text-lg lg:text-base">I am a Data Analyst with 7 years of experience, but I hadn't worked with Statistics much. So, I enrolled in this Data Analyst Certification course. It's a good course, even for beginners. Overall, the training is very good. Thank you, Simplilearn.</p>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="flex-none w-full sm:w-1/2 lg:w-1/3 snap-center px-2">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-gray-200 rounded-full mr-4"><img src="WhatsApp Image 2025-04-25 at 1.27.09 PM.jpeg" alt=""></div>
+                                <div>
+                                    <h3 class="text-lg font-semibold">Vinay Salve</h3>
+                                    <p class="text-sm text-gray-500">Data Science and Business Analytics</p>
+                                    <div class="flex text-yellow-400">★★★★★</div>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 text-sm sm:text-base">I'm happy to share that I completed my Master's program in Data Analysis and Business Analytics with Simplilearn. It was a fantastic learning experience, and I thank Simplilearn for helping me acquire this new skill. I'm also glad to have gained several new connections. Additionally, the Data Analyst Certification greatly enhanced my expertise.</p>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="flex-none w-full sm:w-1/2 lg:w-1/3 snap-center px-2">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-gray-200 rounded-full mr-4"><img src="WhatsApp Image 2025-04-25 at 1.31.40 PM.jpeg" alt=""></div>
+                                <div>
+                                    <h3 class="text-lg font-semibold">Suraj Chander</h3>
+                                    <p class="text-sm text-gray-500">Data Analyst</p>
+                                    <div class="flex text-yellow-400">★★★★★</div>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 text-lg lg:text-base">I decided to upskill and deepen my understanding of the data analytics industry. Simplilearn's Data Analyst course was the perfect gateway to enhance my knowledge. It provided hands-on experience, significantly improving my skills. After completing the course, I landed a new job with a 20% salary hike.</p>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="flex-none w-full sm:w-1/2 lg:w-1/3 snap-center px-2">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-gray-200 rounded-full mr-4"><img src="WhatsApp Image 2025-04-25 at 1.31.55 PM.jpeg" alt=""></div>
+                                <div>
+                                    <h3 class="text-lg font-semibold">Ankit Dongare</h3>
+                                    <p class="text-sm text-gray-500">Data Analyst</p>
+                                    <div class="flex text-yellow-400">★★★★★</div>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 text-sm sm:text-base">I transitioned to Data Science with Simplilearn's Data Analyst course. Coming from a Mechanical Engineering background, I worked in operations before enrolling. The course, co-developed with IBM, was comprehensive and affordable. After completion, I secured a Data Analyst role with a 65% salary hike. Simplilearn made the possible!</p>
+                        </div>
+                    </div>
+                    <!-- Card 5 -->
+                    <div class="flex-none w-full sm:w-1/2 lg:w-1/3 snap-center px-2">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-gray-200 rounded-full mr-4"><img src="WhatsApp Image 2025-04-25 at 1.32.24 PM.jpeg" alt=""></div>
+                                <div>
+                                    <h3 class="text-lg font-semibold">Amol B</h3>
+                                    <p class="text-sm text-gray-500">Associate Manager at Firepro Systems</p>
+                                    <div class="flex text-yellow-400">★★★★★</div>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 text-sm sm:text-base">Simplilearn is an awesome learning platform. The course content is very well designed, and the live classes have personal attention in resolving the doubts. Thanks, Simplilearn.</p>
+                        </div>
+                    </div>
+                    <!-- Card 6 -->
+                    <div class="flex-none w-full sm:w-1/2 lg:w-1/3 snap-center px-2">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-gray-200 rounded-full mr-4"><img src="WhatsApp Image 2025-04-25 at 1.32.36 PM.jpeg" alt=""></div>
+                                <div>
+                                    <h3 class="text-lg font-semibold"></h3>Ravi Chandra
+                                    <p class="text-sm text-gray-500">Package Solution Consultant (Cognos BI) at IBM Global Services</p>
+                                    <div class="flex text-yellow-400">★★★★★</div>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 text-sm sm:text-base">The course was excellent. Appreciate the trainer's capability to answer all the queries. Thanks to Simplilearn for such good course content.</p>
+                        </div>
+                    </div>
+                    <!-- Card 7 -->
+                    <div class="flex-none w-full sm:w-1/2 lg:w-1/3 snap-center px-2">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-gray-200 rounded-full mr-4"><img src="WhatsApp Image 2025-04-25 at 1.33.02 PM.jpeg" alt=""></div>
+                                <div>
+                                    <h3 class="text-lg font-semibold">Gayathri Ramesh</h3>
+                                    <p class="text-sm text-gray-500">Associate Data Engineer</p>
+                                    <div class="flex text-yellow-400">★★★★★</div>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 text-sm sm:text-base">The course was well structured and curated. The live classes were extremely helpful. They made learning more productive and interactive. The program helped me change my domain from a data analyst to an Associate Data Engineer.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Navigation Arrows -->
+                <button onclick="scrollSlider(-1)" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white p-2 rounded-full">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                </button>
+                <button onclick="scrollSlider(1)" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white p-2 rounded-full">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </button>
+            </div>
+          </section>
+         
+
+<!--Financing-->          
+    <div class="container mx-auto px-4 py-6 sm:py-8">
+        <div class="bg-white p-4 sm:p-6 rounded-lg shadow-md">
+            <h2 class="text-3xl md:text-4xl sm:text-4xl font-bold mb-4 text-center md:text-left">Financing</h2>
+            <p class="mb-4 text-gray-600 text-lg sm:text-xl md:text-2xl md:text-left px-7">The admission fee for this program is ₹57,000 (incl. taxes)</p>
+            <div class="flex flex-col md:flex-row items-center md:items-start justify-between gap-4 sm:gap-6 px-7">
+                <!-- Fee Box -->
+                <div class="w-full md:w-1/3 lg:w-1/4 mb-4 md:mb-0">
+                    <div class="bg-white p-6 rounded-lg border-4 text-center border-blue-500 h-50">
+                        <h3 class="text-base sm:text-lg font-semibold">Total Program Fee</h3>
+                        <p class="text-2xl sm:text-3xl font-bold">₹57,000</p>
+                        <p class="text-xs sm:text-sm text-gray-600">(incl. taxes)</p>
+                    </div>
+                </div>
+                <!-- Financing Details -->
+                <div class="w-full md:w-2/3 lg:w-3/4">
+                    <p class="text-lg sm:text-xl md:text-2xl font-semibold mb-2 text-center md:text-left">&nbsp;&nbsp;Pay in Installments, as low as ₹4,750/month</p>
+                    <p class="text-gray-600 mb-4 text-base sm:text-lg md:text-xl text-center md:text-left">
+                        &nbsp;&nbsp;We have partnered with the following financing companies to provide <br>
+                        &nbsp;&nbsp; competitive finance options at as low as 0% interest rates with no hidden cost.
+                    </p>
+                    <div class="flex flex-wrap justify-center md:justify-start space-x-2 sm:space-x-4 mb-4"> &nbsp;&nbsp;
+                        <img src="shopse_1.avif" alt="ShopSe" class="h-6 sm:h-8"> &nbsp;
+                        <img src="Propelld_12.avif" alt="Propelld" class="h-6 sm:h-8">&nbsp;
+                        <img src="Liquiloan_13.svgz" alt="Liquiloans" class="h-6 sm:h-8">
+                    </div>
+                    <div class="flex flex-col sm:flex-row items-center justify-between  gap-2 sm:gap-4">
+                        <a href="#" class="text-blue-500 underline text-sm sm:text-base mb-2 sm:mb-0">&nbsp;&nbsp;Learn More</a>
+                        <div class="flex space-x-1">
+                            <p class="text-gray-600 text-sm sm:text-base">Next cohort starts: 26<sup>th</sup> Apr, 2025</p> &nbsp;
+                        </div>
+                        <div>
+                            <button class="bg-blue-500 text-white px-3 py-1 sm:px-4 sm:py-2 rounded text-sm sm:text-base">Enroll Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+<!--FAQs-->    
+          <div class="containerpx-8 py-6 sm:px-6 sm:py-8 md:px-8 md:py-10 lg:px-42 lg:py-12 mx-auto">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-3xl md:text-4xl sm:text-4xl font-bold mb-4">Data Analyst Course FAQs</h2>
+                <div class="space-y-4 px-7">
+                    <details class="group">
+                        <summary class="bg-blue-50 p-3 rounded-lg cursor-pointer focus:outline-none">
+                            <span class="text-lg font-medium">What is Data Analytics?</span>
+                        </summary>
+                        <p class="mt-2 p-3 text-gray-700">Data analytics uses analytical and statistical tools and techniques to identify patterns and trends in raw data to answer questions, solve problems, predict future outcomes, and create better business strategies. The four main types of data analytics include:
+                            <ul>
+                                <li>Descriptive analytics: What happened?</li>
+                                <li>Diagnostic analytics: Why did it happen?</li>
+                                <li>Predictive analytics: What will happen in the future?</li>
+                                <li>Prescriptive analytics: What can be done to ensure better outcomes?</li>
+                            </ul>
+                            Simplilearn’s Data Analyst Course covers all these aspects and offers a comprehensive understanding of the field, including its practical applications. <br>
+                            If you want a more detailed understanding of Data Analytics, this simplilearn article on What is Data Analytics will help you.
+                        </p>
+                    </details>
+                    <details class="group">
+                        <summary class="bg-blue-50 p-3 rounded-lg cursor-pointer focus:outline-none">
+                            <span class="text-lg font-medium">What does a data analyst do?</span>
+                        </summary>
+                        <p class="mt-2 p-3 text-gray-700">At a high level, data analysts:
+                            <ul>
+                                <li>Identify, gather, and import relevant data from various sources, such as databases, websites, applications, and APIs. <br>
+                                    This involves working with different teams to understand their problems and requirements.</li>
+                                <li>Clean and organize data by identifying duplicate, inaccurate, incomplete, inconsistent, <br>
+                                     and missing data and creating structured databases to prepare it for deeper analysis. Critical tools include SQL, Excel, R, and Python.</li>
+                                <li>Gain insights from data using statistical and machine learning tools and techniques, including regression analysis, <br>
+                                     cluster analysis, ANOVA tests, decision trees, predictive modeling, etc.</li>
+                                <li>Present clear and understandable findings to key stakeholders through dashboards and <br>
+                                    reports using data visualization tools like Tableau and Power BI.</li>
+                            </ul>
+                            To learn more, check out this article about the role of a data analyst.
+                        </p>
+                    </details>
+                    <details class="group">
+                        <summary class="bg-blue-50 p-3 rounded-lg cursor-pointer focus:outline-none">
+                            <span class="text-lg font-medium">What are the benefits of enrolling in this Data Analyst course?</span>
+                        </summary>
+                        <p class="mt-2 p-3 text-gray-700">In collaboration with IBM, Simplilearn’s Data Analyst program teaches in-demand data analytics skills through <br>
+                             expert-led live online classes and hands-on, industry-relevant projects. You’ll gain skills like:
+                             <ul>
+                                <li>Statistical analysis using Excel</li>
+                                <li>Data analysis with Python and R</li>
+                                <li>Linear and logistic regression models</li>
+                                <li>K-means clustering</li>
+                                <li>Supervised and unsupervised learning</li>
+                                <li>Data visualization with Tableau and Power BI, and more</li>
+                             </ul>
+                             <br>
+                             Other benefits include:
+                             <ul>
+                                <li>Earn an industry-recognized Master’s certificate from Simplilearn</li>
+                                <li>Gain course completion certificates from IBM for IBM courses</li>
+                                <li>Take masterclasses led by IBM experts</li>
+                                <li>Participate in Ask Me Anything sessions and exclusive hackathons with IBM</li>
+                             </ul>
+                            </p>
+                    </details>
+                    <details class="group">
+                        <summary class="bg-blue-50 p-3 rounded-lg cursor-pointer focus:outline-none">
+                            <span class="text-lg font-medium">How do I enroll in the Data Analyst Certification Course?</span>
+                        </summary>
+                        <p class="mt-2 p-3 text-gray-700">The application process for the data analyst certification course involves three steps. 
+                            <ul>
+                                <li>Candidates must submit an application with a brief description of why they want to take this course</li>
+                                <li>An admission panel will review the applications and shortlist candidates based on their application</li>
+                                <li>Selected candidates can begin the data analyst certification course within 1-2 weeks and after paying the course fee</li>
+                            </ul>
+                        </p>
+                    </details>
+                    <details class="group">
+                        <summary class="bg-blue-50 p-3 rounded-lg cursor-pointer focus:outline-none">
+                            <span class="text-lg font-medium">What is the average salary of a Data Analyst?</span>
+                        </summary>
+                        <p class="mt-2 p-3 text-gray-700"></p>
+                    </details>
+                    <details class="group">
+                        <summary class="bg-blue-50 p-3 rounded-lg cursor-pointer focus:outline-none">
+                            <span class="text-lg font-medium">What does the job market look like for data analysts?</span>
+                        </summary>
+                        <p class="mt-2 p-3 text-gray-700">The job market for data analysts is strong, with growing demand across industries like tech, finance, and healthcare.</p>
+                    </details>
+                </div>
+                <a href="#" class="text-blue-500 underline mt-4 inline-block px-7">View More</a>
+            </div>
+        </div>
+
+<!--Related programs-->        
+        <section class="bg-gradient-to-r from-[#ffb6d3] to-[#129eaa] px-8 py-6 sm:px-6 sm:py-8 md:px-8 md:py-10 lg:px-42 lg:py-12 mx-auto">
+          <h2 class="text-3xl md:text-4xl sm:text-4xl font-bold mb-4 sm:mb-6 md:mb-8">Related Programs</h2>
+          <div class="relative max-w-6xl mx-auto px-3 sm:px-4 md:px-6">
+              <!-- Slider Container -->
+              <div id="slider" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-4">
+                  <!-- Card 1 -->
+                  <div class="flex-none w-4/5 sm:w-1/2 lg:w-1/3 snap-center px-2">
+                      <div class="bg-white p-4 sm:p-5 md:p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                          <img src="pdp-slider_1.avif" alt="Program 1" class="w-full h-40 sm:h-48 object-cover rounded-t-lg">
+                          <div class="p-3 sm:p-4">
+                              <h3 class="text-base sm:text-lg font-semibold">Professional Certificate in Data Analytics and Generative AI</h3>
+                              <p class="text-xs sm:text-sm text-gray-500">Cohort Starts: 05 May 2025 | 8 months</p>
+                              <img src="Purdue_CategoryPage_48px.svgz" alt="Purdue University" class="mt-2 w-24">
+                          </div>
+                      </div>
+                  </div>
+                  <!-- Card 2 -->
+                  <div class="flex-none w-4/5 sm:w-1/2 lg:w-1/3 snap-center px-2">
+                      <div class="bg-white p-4 sm:p-5 md:p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                          <img src="pdp-slider_1.avif" alt="Program 2" class="w-full h-40 sm:h-48 object-cover rounded-t-lg">
+                          <div class="p-3 sm:p-4">
+                              <h3 class="text-base sm:text-lg font-semibold">Professional Certificate in AI and Machine Learning</h3>
+                              <p class="text-xs sm:text-sm text-gray-500">Cohort Starts: 07 May 2025 | 6 months</p>
+                              <img src="Purdue_CategoryPage_48px.svgz" alt="Purdue University" class="mt-2 w-24">
+                          </div>
+                      </div>
+                  </div>
+                  <!-- Card 3 -->
+                  <div class="flex-none w-4/5 sm:w-1/2 lg:w-1/3 snap-center px-2">
+                      <div class="bg-white p-4 sm:p-5 md:p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                          <img src="pdp-slider_1.avif" alt="Program 3" class="w-full h-40 sm:h-48 object-cover rounded-t-lg">
+                          <div class="p-3 sm:p-4">
+                              <h3 class="text-base sm:text-lg font-semibold">Professional Certificate in Data Science and Generative AI</h3>
+                              <p class="text-xs sm:text-sm text-gray-500">Cohort Starts: 12 May 2025 | 6 months</p>
+                              <img src="Purdue_CategoryPage_48px.svgz" alt="Purdue University" class="mt-2 w-24">
+                          </div>
+                      </div>
+                  </div>
+                  <!-- Card 4 -->
+                  <div class="flex-none w-4/5 sm:w-1/2 lg:w-1/3 snap-center px-2">
+                      <div class="bg-white p-4 sm:p-5 md:p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                          <img src="photo-1650802218127-3b9c06de0d29.jpeg" alt="Program 4" class="w-full h-40 sm:h-48 object-cover rounded-t-lg">
+                            <h3 class="text-base sm:text-lg font-semibold">Data Scientist</h3>
+                            <div class="flex items-center text-xs sm:text-sm text-gray-500 my-2">
+                                <span class="mr-3">11 months</span>
+                                <span>12 Courses</span>
+                            </div>
+                            <ul class="text-xs sm:text-sm text-blue-600 space-y-1">
+                                <li>✔ Simplilearn JobAssist Program</li>
+                                <li>✔ 14 tools & Rigorous curriculum</li>
+                                <li>✔ In Collaboration with IBM</li>
+                            </ul>
+                      </div>
+                  </div>
+              </div>
+              <!-- Navigation Arrows -->
+              <button onclick="scrollSlider(-1)" class="absolute left-0 sm:left-2 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white p-2 rounded-full hover:bg-blue-600 transition">
+                  <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+              </button>
+              <button onclick="scrollSlider(1)" class="absolute right-0 sm:right-2 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white p-2 rounded-full hover:bg-blue-600 transition">
+                  <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+              </button>
+          </div>
+      </section>
+  
+      <script>
+          const slider = document.getElementById('slider');
+          const cardWidth = slider.firstElementChild.offsetWidth + 16; // Including padding and gap
+  
+          function scrollSlider(direction) {
+              const scrollAmount = direction * cardWidth;
+              slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+          }
+  
+          // Hide scrollbar for better UX
+          const style = document.createElement('style');
+          style.textContent = `
+              .scrollbar-hide::-webkit-scrollbar {
+                  display: none;
+              }
+              .scrollbar-hide {
+                  -ms-overflow-style: none;
+                  scrollbar-width: none;
+              }
+          `;
+          document.head.appendChild(style);
+      </script>
+
+<!--footer-->
+<div class="bg-black">
+<footer class="container mx-auto p-4 ">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 mb-6 mt-9">
+        <!-- Follow us -->
+        <div>
+            <h4 class="font-semibold text-white text-2xl mb-2">Follow us!</h4>
+            <button class="bg-gray-800 p-2 rounded mb-2 w-full text-white text-left">Refer and Earn</button>
+            <div class="flex space-x-2">
+                <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-telegram"></i></a>
+            </div>
+        </div>
+        <!-- Company -->
+        <div>
+            <h4 class="font-semibold mb-2 text-white text-2xl">Company</h4>
+            <ul class="space-y-1">
+                <li><a href="#" class="text-gray-400 hover:text-white text-xl">About us</a></li>
+                <li><a href="#" class="text-gray-400 hover:text-white text-xl">Careers</a></li>
+                <li><a href="#" class="text-gray-400 hover:text-white text-xl">Newsroom</a></li>
+                <li><a href="#" class="text-gray-400 hover:text-white text-xl">Alumni speak</a></li>
+                <li><a href="#" class="text-gray-400 hover:text-white text-xl">Grievance redressal</a></li>
+                <li><a href="#" class="text-gray-400 hover:text-white text-xl">Contact us</a></li>
+            </ul>
+        </div>
+        <!-- Work with us -->
+        <div>
+            <h4 class="font-semibold mb-2 text-white text-2xl">Work with us</h4>
+            <ul class="space-y-1">
+                <li><a href="#" class="text-gray-400 hover:text-white text-xl">Become an instructor</a></li>
+                <li><a href="#" class="text-gray-400 hover:text-white text-xl">Blog as guest</a></li>
+            </ul>
+        </div>
+        <!-- Discover -->
+        <div>
+            <h4 class="font-semibold mb-2 text-white text-2xl">Discover</h4>
+            <ul class="space-y-1">
+                <li><a href="#" class="text-gray-400 hover:text-white text-xl">Free Courses</a></li>
+                <li><a href="#" class="text-gray-400 hover:text-white text-xl">Skillup Sitemap</a></li>
+                <li><a href="#" class="text-gray-400 hover:text-white text-xl">Resources</a></li>
+                <li><a href="#" class="text-gray-400 hover:text-white text-xl">RSS feed</a></li>
+            </ul>
+        </div>
+        <!-- For Businesses -->
+        <div>
+            <h4 class="font-semibold mb-2 text-white text-2xl">For Businesses</h4>
+            <ul class="space-y-1">
+                <li><a href="#" class="text-gray-400 hover:text-white text-xl">Corporate training</a></li>
+                <li><a href="#" class="text-gray-400 hover:text-white text-xl">Simplilearn Learning Hub+</a></li>
+                <li><a href="#" class="text-gray-400 hover:text-white text-xl">Guaranteed-to-run classes</a></li>
+                <li><a href="#" class="text-gray-400 hover:text-white text-xl">Partners</a></li>
+            </ul>
+        </div>
+        <!-- Learn On The Go -->
+        <div>
+            <h4 class="font-semibold mb-2 text-white text-2xl">Learn On The Go!</h4>
+            <ul class="space-y-1">
+                <li><a href="#" class="text-gray-400 hover:text-white flex items-center text-xl"><i class="fab fa-android mr-2"></i> Get the Android App</a></li>
+                <li><a href="#" class="text-gray-400 hover:text-white flex items-center text-xl"><i class="fab fa-apple mr-2"></i> Get the iOS App</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="border-t border-gray-700 pt-4">
+        <h4 class="font-semibold mb-2 text-white text-2xl">Trending Post Graduate Programs</h4>
+        <p class="text-gray-400 text-lg">PG in Data Science | Product Management Certification Course | Blockchain Course | Machine Learning Course | Cyber Security Course in India | Project Management Certification Course | Lean Six Sigma Certification Course | Cloud Computing and DevOps - ITG | Data Analytics Program | Project and ML Course | Business Analysis Certification Course | Data Engineering Certification Courses | Digital Marketing Certification Program | Product Management Training Course</p>
+    </div>
+    <br>
+    <div class=" border-gray-700 pt-4">
+        <h4 class="font-semibold mb-2 text-white text-2xl">Trending Master Programs</h4>
+        <p class="text-gray-400 text-lg">PMP Plus Certification Training Course | Data Science Certification Course | Data Analyst Course | Masters in Artificial Intelligence | Cloud Architect Certification Training Course | DevOps Engineer Certification Training Course | Digital Marketing Course | Data Analyst Course | Masters in Artificial Intelligence | Cloud Architect Certification Training</p>
+    </div>
+    <br>
+    <div class="border-gray-700 pt-4">
+          <h4 class="font-semibold mb-2 text-white text-2xl">Trending Courses</h4>
+          <p class="text-gray-400  text-lg">PMP Certification Training Course | CSM Certification Course | Data Science with Python Course | AWS Certification | CEH Certification | AWS Technical Essentials | AWS DevOps Certification | ITIL Certification | Architecting on AWS Certification | AZ 900 Certification | CompTIA Security+ Certification | AZ 400 Certification | SAFe Certification | CISSP Certification Training | Tableau Certification Course | Lean Six Sigma Green Belt Certification | Lean Six Sigma Black Belt Certification</p>
+    </div>
+    <br>
+    <div class="border-gray-700 pt-4">
+        <h4 class="font-semibold mb-2 text-white text-2xl">Trending Categories</h4>
+        <p class="text-gray-400  text-lg">Project Management Courses | AWS Courses | Web Development Courses | Online Certifications | Generative AI Courses | Agile Certifications | Cloud Computing Courses | Cyber Security Courses | EC-Council Certifications | PeopleCert Certifications | Scrum Alliance Certifications | Scaled Agile Certifications | Google Cloud Courses | ISC2 Certifications | AXELOS Certifications | ISACA Certifications | PMI Certifications | CompTIA certifications | Microsoft Certifications</p>
+  </div>
+  <br>
+  <div class="border-gray-700 pt-4">
+    <h4 class="font-semibold mb-2 text-white text-2xl">Trending Resources</h4>
+    <p class="text-gray-400  text-lg">Python Tutorial | JavaScript Tutorial | Java Tutorial | Angular Tutorial | Node.js Tutorial | Docker Tutorial | Git Tutorial | Kubernetes Tutorial | Power BI Tutorial | CSS Tutorial</p>
+</div>
+<br>
+<div class="border-t border-gray-700 pt-4 text-center">
+    <p class="text-gray-400 text-2xl text-white">
+        Terms and Conditions | Privacy Policy | Refund Policy | Country <span class="inline-block ml-1"><img src="https://flagcdn.com/in.svg" alt="India" class="w-5 h-5"></span>
+    </p>
+    <p class="text-gray-400 text-lg mt-2">
+        Address: NALANDA 53/1, C, Manipal Arcade, 24th Main Rd, Sector 2, HSR Layout, Bengaluru - 560102, Karnataka, India. Phone No: 1800-212-7688
+    </p>
+    <p class="text-gray-400 text-lg mt-2">
+        © 2009-2025 Simplilearn Solutions. All Rights Reserved. The certification names are the trademarks of their respective owners.
+    </p>
+</div>
+<!-- Acknowledgement -->
+<div class="border-t border-gray-700 pt-4 mt-4">
+    <p class="text-gray-400 text-2xl text-white">
+        Acknowledgement
+        <br>
+        <div class="text-gray-400">
+        * PMP, PMI, PMBOK, CAPM, PgMP, PfMP, ACP, PBA, RMP, SP, OPM3 and the PMI Authorized Training Partner logo are registered marks of the Project Management Institute, Inc.
+        </div>
+    </p>
+</div>
+</footer>
+</div>
+
+</body>
+</html>
